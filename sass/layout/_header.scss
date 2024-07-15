@@ -1,0 +1,43 @@
+@use "../utils/mixin" as mxn;
+@use "../utils/variables" as var;
+header {
+  background-color: var.$tint-blueColor;
+
+  nav {
+    @include mxn.flex(center, space-between, 0);
+    padding: 33px 0;
+    @media (max-width: 1000px) {
+      .humbur {
+        display: block !important;
+      }
+      display: block;
+      .nav-menu {
+        padding: 15px 0 5px;
+      }
+    }
+    .nav-brand {
+      @include mxn.flex(center, space-between, 0);
+      .humbur {
+        display: none !important;
+      }
+    }
+    ul {
+      @include mxn.flex(center, 0, 40px);
+      list-style-type: none;
+      @media (max-width: 1000px) {
+        @include mxn.flex(center, center, 40px);
+      }
+      a {
+        text-decoration: none;
+        color: var.$color-grey;
+      }
+      .contact-link {
+        display: flex;
+
+        border: 2px solid rgba(244, 246, 252, 0.2);
+        padding: 16px 48px;
+        border-radius: 41px;
+      }
+    }
+  }
+}
